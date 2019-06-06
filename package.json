@@ -1,0 +1,21 @@
+{
+  "name": "reactjs-fullstack",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "lerna bootstrap"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shrimpy/reactjs-fullstack.git"
+  },
+  "author": "shrimpy",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/shrimpy/reactjs-fullstack/issues"
+  },
+  "homepage": "https://github.com/shrimpy/reactjs-fullstack#readme",
+  "devDependencies": {
+    "lerna": "^3.14.1"
+  }
+}
