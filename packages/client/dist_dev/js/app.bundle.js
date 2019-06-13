@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "802d4314a7516cdcf783";
+/******/ 	var hotCurrentHash = "cfe720242547bf69dcd6";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -25530,13 +25530,13 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-exports.Hello = (props) => React.createElement("h1", null,
+var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+exports.Hello = function (props) { return (React.createElement("h1", null,
     "Hello from ",
     props.compiler,
     " and ",
     props.framework,
-    "!");
+    "!")); };
 
 
 /***/ }),
@@ -25558,9 +25558,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-const ReactDOM = __importStar(__webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js"));
-const Hello_1 = __webpack_require__(/*! ./components/Hello */ "./src/components/Hello.tsx");
+var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+var ReactDOM = __importStar(__webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js"));
+var Hello_1 = __webpack_require__(/*! ./components/Hello */ "./src/components/Hello.tsx");
 ReactDOM.render(React.createElement(Hello_1.Hello, { compiler: "TypeScript", framework: "React" }), document.getElementById("root"));
 
 

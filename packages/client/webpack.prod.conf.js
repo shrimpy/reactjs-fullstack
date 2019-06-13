@@ -1,36 +1,37 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const autoprefixer = require('autoprefixer');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-// const webpack = require('webpack');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const autoprefixer = require("autoprefixer");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 const paths = {
-    distFolder: path.resolve(__dirname, 'dist')
+    distFolder: path.resolve(__dirname, "dist"),
+    assetsFolder: path.resolve(__dirname, "assets"),
 }
 
 module.exports = {
-    mode: 'production',
+    mode: "production",
     entry: {
-        app: ['./src/index.tsx'],
-        react: ['react', 'react-dom']
+        app: ["./src/index.tsx"],
+        react: ["react", "react-dom"]
     },
     output: {
-        publicPath: '/',
-        filename: 'js/[name].bundle.js',
-        chunkFilename: 'js/[name].[chunkhash:8].js',
+        publicPath: "/",
+        filename: "js/[name].bundle.js",
+        chunkFilename: "js/[name].[chunkhash:8].js",
         path: paths.distFolder,
     },
     // Target environment
-    target: 'web',
+    target: "web",
 
     resolve: {
         // Resolve module requests (default)
-        modules: ['node_modules'],
-        // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: ['.ts', '.tsx', '.js', '.json']
+        modules: ["node_modules"],
+        // Add ".ts" and ".tsx" as resolvable extensions.
+        extensions: [".ts", ".tsx", ".js", ".json"]
     },
 
     module: {
@@ -38,20 +39,20 @@ module.exports = {
             // Lint TypeScript
             {
                 test: /\.tsx?$/,
-                enforce: 'pre',
+                enforce: "pre",
                 use: [
                     {
                         options: {
-                            formatter: 'stylish',
+                            formatter: "stylish",
                         },
-                        loader: require.resolve('tslint-loader'),
+                        loader: require.resolve("tslint-loader"),
                     }
                 ]
             },
-            // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
+            // All files with a ".ts" or ".tsx" extension will be handled by "awesome-typescript-loader".
             {
                 test: /\.tsx?$/,
-                loader: 'awesome-typescript-loader'
+                loader: "awesome-typescript-loader"
             },
             {
                 test: /\.css$/,
@@ -59,29 +60,29 @@ module.exports = {
                 use: [
                     MiniCssExtractPlugin.loader,
                     {
-                        loader: require.resolve('typings-for-css-modules-loader'),
+                        loader: require.resolve("typings-for-css-modules-loader"),
                         options: {
                             importLoaders: 1,
                             sourceMap: false,
                             modules: true,
-                            localIdentName: '[name]_[local][hash:base64:5]',
+                            localIdentName: "[name]_[local][hash:base64:5]",
                             namedExport: true,
                         },
                     },
                     {
-                        loader: require.resolve('postcss-loader'),
+                        loader: require.resolve("postcss-loader"),
                         options: {
-                            ident: 'postcss',
+                            ident: "postcss",
                             plugins: () => [
-                                require('postcss-flexbugs-fixes'),
+                                require("postcss-flexbugs-fixes"),
                                 autoprefixer({
                                     browsers: [
-                                        '>1%',
-                                        'last 4 versions',
-                                        'Firefox ESR',
-                                        'not ie < 9', // React doesn't support IE8 anyway
+                                        ">1%",
+                                        "last 4 versions",
+                                        "Firefox ESR",
+                                        "not ie < 9", // React doesn"t support IE8 anyway
                                     ],
-                                    flexbox: 'no-2009',
+                                    flexbox: "no-2009",
                                 }),
                             ],
                         },
@@ -92,10 +93,10 @@ module.exports = {
     },
 
     plugins: [
-        new CleanWebpackPlugin([paths.distFolder]),
+        new CleanWebpackPlugin({ cleanOnceBeforeBuildPatterns: [paths.distFolder] }),
         new HtmlWebpackPlugin({
-            template: 'src/index.html',
-            filename: 'index.html',
+            template: "src/index.html",
+            filename: "index.html",
             minify: {
                 removeComments: true,
                 collapseWhitespace: true,
@@ -110,9 +111,19 @@ module.exports = {
             },
         }),
         new MiniCssExtractPlugin({
-            filename: '[name].[hash].css',
-            chunkFilename: '[id].[hash].css'
+            filename: "[name].[hash].css",
+            chunkFilename: "[id].[hash].css"
         }),
+        new CopyPlugin([
+            {
+                from: path.resolve(paths.assetsFolder, "favicon.ico"),
+                to: path.resolve(paths.distFolder, "favicon.ico")
+            },
+            {
+                from: path.resolve(paths.assetsFolder, "manifest.json"),
+                to: path.resolve(paths.distFolder, "manifest.json")
+            }
+        ]),
     ],
 
     optimization: {
