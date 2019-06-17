@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "tsc && mkdir -p ./build/src/public && cp -R ./src/public/* ./build/src/public",
+    "build": "tsc && mkdir -p ./dist/src/public && cp -R ./src/public/* ./dist/src/public",
     "start": "nodemon",
     "prod": "node ./build/src/server.js"
   },

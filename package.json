@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "lerna bootstrap"
+    "build": "lerna bootstrap && lerna run build --stream"
   },
   "repository": {
     "type": "git",
