@@ -7,6 +7,11 @@ export default app;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use("/", express.static(path.join(__dirname, "public")));
+
+app.get("/ping", function (_, res) {
+    res.send("pong");
+});
+
+app.use("*", express.static(path.join(__dirname, "public")));
 
 console.log(__dirname);
