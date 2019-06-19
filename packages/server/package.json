@@ -5,7 +5,7 @@
   "scripts": {
     "build": "tsc && mkdir -p ./dist/src/public && cp -R ./src/public/* ./dist/src/public",
     "start": "nodemon",
-    "prod": "node ./build/src/server.js"
+    "prod": "node ./dist/src/server.js"
   },
   "license": "Apache-2.0",
   "dependencies": {

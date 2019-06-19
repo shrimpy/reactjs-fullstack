@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "lerna bootstrap && lerna run build --stream"
+    "build-client": "lerna run --scope client build",
+    "build-server": "lerna run --scope server build",
+    "copy-assets": "cp -R ./packages/client/dist/* ./packages/server/dist/src/public",
+    "build": "lerna bootstrap && yarn build-client && yarn build-server && yarn copy-assets",
+    "start": "lerna run start --stream --parallel"
   },
   "repository": {
     "type": "git",
