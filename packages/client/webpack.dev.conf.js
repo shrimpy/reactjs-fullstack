@@ -123,7 +123,7 @@ module.exports = {
     index: "index.html",
     hot: true,
     proxy: {
-      "/api": "http://localhost:8080"
+      "/api": "http://localhost:8000"
     }
   },
 };
