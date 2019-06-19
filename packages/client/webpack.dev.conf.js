@@ -121,6 +121,9 @@ module.exports = {
   devServer: {
     contentBase: paths.assetsFolder,
     index: "index.html",
-    hot: true
+    hot: true,
+    proxy: {
+      "/api": "http://localhost:8080"
+    }
   },
 };
