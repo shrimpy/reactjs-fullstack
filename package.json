@@ -7,7 +7,7 @@
     "build-server": "lerna run --scope server build",
     "copy-assets": "cp -R ./packages/client/dist/* ./packages/server/dist/src/public",
     "build": "lerna bootstrap && yarn build-client && yarn build-server && yarn copy-assets",
-    "start": "lerna bootstrap && lerna run start --stream --parallel"
+    "dev": "lerna bootstrap && lerna run dev --stream --parallel"
   },
   "repository": {
     "type": "git",

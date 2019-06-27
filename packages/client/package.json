@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "build": "node_modules/.bin/webpack --config webpack.prod.conf.js",
-    "start": "node_modules/.bin/webpack-dev-server --config webpack.dev.conf.js --open"
+    "dev": "node_modules/.bin/webpack-dev-server --config webpack.dev.conf.js --open"
   },
   "license": "Apache-2.0",
   "dependencies": {
