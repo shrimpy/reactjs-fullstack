@@ -15,9 +15,9 @@
    |
    |------- packages
               |
-              |-------- client (reactjs application)
+              |-------- client (Reactjs application)
               |           
-              |-------- Server (Expressjs)
+              |-------- server (Expressjs)
    
 ```
 

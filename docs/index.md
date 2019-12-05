@@ -15,9 +15,9 @@
    |
    |------- packages
               |
-              |-------- client (reactjs application)
+              |-------- client (Reactjs application)
               |           
-              |-------- Server (Expressjs)
+              |-------- server (Expressjs)
    
 ```
 
@@ -28,7 +28,17 @@ yarn
 ```
 - install lerna
 
-### Build
+### Local development environment
+```
+yarn dev
+```
+- Create local development environment
+    - ensure dependencies are installed
+    - start client project with hot reload
+    - start server project with hot reload
+    - auto open browser
+
+### Release Build
 ```
 yarn build
 ```
@@ -38,12 +48,17 @@ yarn build
     - build server project
     - copy client assets into server's public folder
 
-### Local development environment
+### Deploy to heroku
 ```
-yarn start
+yarn build
+
+heroku buildpacks:clear
+
+heroku buildpacks:set https://github.com/timanovsky/subdir-heroku-buildpack
+
+heroku buildpacks:add heroku/nodejs 
+
+heroku config:set PROJECT_PATH=packages/server
+
+git push heroku master
 ```
-- Create local development environment
-    - ensure dependencies are installed
-    - start client project with hot reload
-    - start server project with hot reload
-    - auto open browser
