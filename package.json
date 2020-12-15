@@ -21,5 +21,9 @@
   "homepage": "https://github.com/shrimpy/reactjs-fullstack#readme",
   "devDependencies": {
     "lerna": "^3.14.1"
+  },
+  "engines": {
+    "node": "12.x",
+    "yarn": "1.22.x"
   }
 }
