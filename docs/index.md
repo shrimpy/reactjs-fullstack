@@ -51,14 +51,9 @@ yarn build
 ### Deploy to heroku
 ```
 yarn build
-
 heroku buildpacks:clear
-
-heroku buildpacks:set https://github.com/timanovsky/subdir-heroku-buildpack
-
 heroku buildpacks:add heroku/nodejs 
-
-heroku config:set PROJECT_PATH=packages/server
-
+# Keep devDependencies so that lerna will work
+heroku config:set NPM_CONFIG_PRODUCTION=false
 git push heroku master
 ```
