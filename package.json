@@ -20,10 +20,10 @@
   },
   "homepage": "https://github.com/shrimpy/reactjs-fullstack#readme",
   "devDependencies": {
-    "lerna": "^3.14.1"
+    "lerna": "^4.0.0"
   },
   "engines": {
-    "node": "12.x",
+    "node": "15.x",
     "yarn": "1.22.x"
   }
 }
