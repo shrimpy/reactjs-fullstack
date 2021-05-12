@@ -114,16 +114,18 @@ module.exports = {
             filename: "[name].[hash].css",
             chunkFilename: "[id].[hash].css"
         }),
-        new CopyPlugin([
-            {
-                from: path.resolve(paths.assetsFolder, "favicon.ico"),
-                to: path.resolve(paths.distFolder, "favicon.ico")
-            },
-            {
-                from: path.resolve(paths.assetsFolder, "manifest.json"),
-                to: path.resolve(paths.distFolder, "manifest.json")
-            }
-        ]),
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: path.resolve(paths.assetsFolder, "favicon.ico"),
+                    to: path.resolve(paths.distFolder, "favicon.ico")
+                },
+                {
+                    from: path.resolve(paths.assetsFolder, "manifest.json"),
+                    to: path.resolve(paths.distFolder, "manifest.json")
+                }
+            ]
+        }),
     ],
 
     optimization: {

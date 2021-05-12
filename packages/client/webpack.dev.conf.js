@@ -107,16 +107,18 @@ module.exports = {
       filename: "index.html"
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new CopyPlugin([
-      {
-        from: path.resolve(paths.assetsFolder, "favicon.ico"),
-        to: path.resolve(paths.distFolder, "favicon.ico")
-      },
-      {
-        from: path.resolve(paths.assetsFolder, "manifest.json"),
-        to: path.resolve(paths.distFolder, "manifest.json")
-      }
-    ])
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(paths.assetsFolder, "favicon.ico"),
+          to: path.resolve(paths.distFolder, "favicon.ico")
+        },
+        {
+          from: path.resolve(paths.assetsFolder, "manifest.json"),
+          to: path.resolve(paths.distFolder, "manifest.json")
+        }
+      ]
+    }),
   ],
   devServer: {
     contentBase: paths.assetsFolder,
