@@ -5,7 +5,7 @@
   "scripts": {
     "build-client": "lerna run --scope client build",
     "build-server": "lerna run --scope server build",
-    "copy-assets": "cp -R ./packages/client/dist/* ./packages/server/dist/src/public",
+    "copy-assets": "cp -R ./packages/client/build/* ./packages/server/dist/src/public",
     "build": "lerna bootstrap && yarn build-client && yarn build-server && yarn copy-assets",
     "dev": "lerna bootstrap && lerna run dev --stream --parallel"
   },
@@ -23,7 +23,7 @@
     "lerna": "^4.0.0"
   },
   "engines": {
-    "node": "15.x",
+    "node": "16.x",
     "yarn": "1.22.x"
   }
 }
