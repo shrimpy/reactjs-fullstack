@@ -1,5 +1,6 @@
 import * as path from "path";
 import express from "express";
+import cookieParser from "cookie-parser";
 import rateLimit from "express-rate-limit";
 import api from "./routes";
 
@@ -21,6 +22,7 @@ const limiter = rateLimit({
 app.use("/api/", limiter);
 
 app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
 app.use(express.json());
 
 app.use("/api", api);
