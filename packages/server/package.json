@@ -25,8 +25,9 @@
     "@types/express-rate-limit": "^6.0.0",
     "@types/express-session": "^1.17.7",
     "@types/node": "^20.1.4",
-    "@types/passport": "^1.0.12",
-    "@types/passport-facebook": "^2.1.11",
+    "@types/passport": "1.0.15",
+    "@types/passport-facebook": "3.0.3",
+    "@types/passport-strategy": "^0.2.38",
     "nodemon": "^2.0.22",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4"
