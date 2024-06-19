@@ -131,18 +131,50 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-20.1.4.tgz#83f148d2d1f5fe6add4c53358ba00d97fc4cdb71"
   integrity sha512-At4pvmIOki8yuwLtd7BNHl3CiWNbtclUbNtScGx4OHfBd4/oWoJC8KRCIxXwkdndzhxOsPXihrsOoydxBjlE9Q==
 
-"@types/passport-facebook@^2.1.11":
-  version "2.1.11"
-  resolved "https://registry.yarnpkg.com/@types/passport-facebook/-/passport-facebook-2.1.11.tgz#9fd1d6ad8fddc23395c36a88a46f36b9b67a4d9b"
-  integrity sha512-YsZUZryJvHt2E/WdR22FlnCi9ckMwkGR+FwCcXq830rOvruhXJHJtKSXSD+Kn4phBsrEpqoP4xX6fFuEodk20A==
+"@types/oauth@*":
+  version "0.9.5"
+  resolved "https://registry.yarnpkg.com/@types/oauth/-/oauth-0.9.5.tgz#acc4209bfa1c8d7d3aaf2c9ad0b32216a29616c1"
+  integrity sha512-+oQ3C2Zx6ambINOcdIARF5Z3Tu3x//HipE889/fqo3sgpQZbe9c6ExdQFtN6qlhpR7p83lTZfPJt0tCAW29dog==
+  dependencies:
+    "@types/node" "*"
+
+"@types/passport-facebook@3.0.3":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@types/passport-facebook/-/passport-facebook-3.0.3.tgz#d73d79332b80372d5f38b2b6901e22c1326387c8"
+  integrity sha512-4cwyK2bGMo4Di8eMMLjf9JgDbpptRVYmStuy0ETZSaVo6fcY9+BtB9hCUmLEobUtqNHoIoXIWOCdDA2UynCUyg==
+  dependencies:
+    "@types/express" "*"
+    "@types/passport" "*"
+    "@types/passport-oauth2" "*"
+
+"@types/passport-oauth2@*":
+  version "1.4.17"
+  resolved "https://registry.yarnpkg.com/@types/passport-oauth2/-/passport-oauth2-1.4.17.tgz#d5d54339d44f6883d03e69dc0cc0e2114067abb4"
+  integrity sha512-ODiAHvso6JcWJ6ZkHHroVp05EHGhqQN533PtFNBkg8Fy5mERDqsr030AX81M0D69ZcaMvhF92SRckEk2B0HYYg==
+  dependencies:
+    "@types/express" "*"
+    "@types/oauth" "*"
+    "@types/passport" "*"
+
+"@types/passport-strategy@^0.2.38":
+  version "0.2.38"
+  resolved "https://registry.yarnpkg.com/@types/passport-strategy/-/passport-strategy-0.2.38.tgz#482abba0b165cd4553ec8b748f30b022bd6c04d3"
+  integrity sha512-GC6eMqqojOooq993Tmnmp7AUTbbQSgilyvpCYQjT+H6JfG/g6RGc7nXEniZlp0zyKJ0WUdOiZWLBZft9Yug1uA==
   dependencies:
     "@types/express" "*"
     "@types/passport" "*"
 
-"@types/passport@*", "@types/passport@^1.0.12":
+"@types/passport@*":
   version "1.0.12"
   resolved "https://registry.yarnpkg.com/@types/passport/-/passport-1.0.12.tgz#7dc8ab96a5e895ec13688d9e3a96920a7f42e73e"
   integrity sha512-QFdJ2TiAEoXfEQSNDISJR1Tm51I78CymqcBa8imbjo6dNNu+l2huDxxbDEIoFIwOSKMkOfHEikyDuZ38WwWsmw==
+  dependencies:
+    "@types/express" "*"
+
+"@types/passport@1.0.15":
+  version "1.0.15"
+  resolved "https://registry.yarnpkg.com/@types/passport/-/passport-1.0.15.tgz#0970b397621a9ea4106c7e704e3d12394cc9b820"
+  integrity sha512-oHOgzPBp5eLI1U/7421qYV/ZySQXMYCBSfRkDe1tQ0YrIbLY/M/76qIXE7Bs7lFyvw1x5QqiNQ9imvh0fQHe9Q==
   dependencies:
     "@types/express" "*"
 

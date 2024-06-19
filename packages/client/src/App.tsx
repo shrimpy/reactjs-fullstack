@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { TailWindSample } from './TailWindSample';
 
 function App() {
   const [result, setResult] = useState("calling api ...");
@@ -15,6 +16,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
@@ -29,6 +31,8 @@ function App() {
         <br />
         {result}
       </header>
+
+      <TailWindSample />
     </div>
   );
 }
